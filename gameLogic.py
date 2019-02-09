@@ -6,6 +6,10 @@ class iceBreaker():
         self.users = []
         self.questions = {}
 
+    def resetGame(self):
+        self.users = []
+        self.questions = {}
+
     def addUser(self, name):
         self.users += name
 
@@ -17,3 +21,6 @@ class iceBreaker():
 
     def play(self):
         pass
+
+    def processMessage(self, message):
+        return ""

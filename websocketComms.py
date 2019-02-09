@@ -11,7 +11,7 @@ class websocketComms(Thread):
 
     async def consumer_handler(self, websocket, path):
         async for message in websocket:
-            response = self.game ###
+            response = self.game.processMessage(message)
             await websocket.send(response)
 
     def run(self):
