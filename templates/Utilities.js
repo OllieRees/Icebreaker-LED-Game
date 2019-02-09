@@ -2,7 +2,8 @@
 
     <script>
 
-var deadline = new Date("dec 31, 2017 15:37:25").getTime();
+var deadline = new Date();
+deadline.setSeconds(t.getSeconds() + 120); //adds 120 seconds so countdown is 2 minutes
 
 var x = setInterval(function() {
 
