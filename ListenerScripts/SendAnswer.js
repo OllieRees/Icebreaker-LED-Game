@@ -1,10 +1,11 @@
-/** Gets the answer for each question */
+/** Sends the answer for each question to the DragonServer */
 
 /** Gets the answer from the textfield */
 getAnswer = function(TextFieldID) {
     return document.getElementById(TextFieldID).value;
 };
 
+/** Get game cookie w/ username */
 getCookie = function() {
     return document.cookie;
 };
@@ -32,4 +33,3 @@ sendAnswer = function(TextFieldID, dragonServerAddress) {
         conn.send("Username : " + username + ", Answer : " + answer);
     };
 };
-
