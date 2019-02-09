@@ -3,6 +3,6 @@
 
 /** Create a webapp cookie with the username */
 createWebAppCookie = function(TextFieldID) {
-    let username = getUsername(TextFieldID);
+    let username = document.getElementById(TextFieldID).value;
     document.cookie = "username=" + username;
 };
