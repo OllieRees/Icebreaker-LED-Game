@@ -1,4 +1,4 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, make_response
 import threading
 import random
 from websocketComms import websocketComms
@@ -6,6 +6,8 @@ from gameLogic import iceBreaker
 
 app = Flask(__name__)
 ws = websocketComms()
+USERS = set()
+ib = iceBreaker(USERS)
 
 @app.route('/')
 def index():
@@ -13,21 +15,27 @@ def index():
 
 @app.route('/questions', methods = ['POST', 'GET'])
 def questions():
+    name = "default"
+    if request.method == 'POST':
+        name = request.form['name']
     questionList = []
     with open("static/questions.txt") as file:
         for line in file:
             questionList += line.strip()
     
-    newQuestionList = []
+    filteredQuestionList = []
     for i in random.sample(range(len(questionList)), 6):
-        newQuestionList += questionList[i]
+        filteredQuestionList += questionList[i]
 
-    newNewQuestionList = zip(range(len(newQuestionList)), newQuestionList)
-    return render_template("questions.html", questions=newNewQuestionList)
+    finalQuestionList = {}
+
+    resp = make_response(render_template("questions.html", questions=finalQuestionList))
+    resp.setCookie('name', name)
+    return resp
 
 @app.route('/game', methods = ['POST', 'GET'])
 def game():
-    iceBreaker().play()
+    ib.play()
 
 if __name__ == '__main__':
     ws.start()
