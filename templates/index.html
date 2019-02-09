@@ -5,36 +5,22 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Ice Breaker</title>
-    <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="stylesht.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="bootstrap.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="design.css" crossorigin="anonymous">
 </head>
 <body>
 <div class="container">
-    <img src="Ice.png" />
+    <h1>Ice Breaker</h1>
+
     <div class="jumbotron">
-        <h3>New Player:</h3>
-        <form id="issueInputForm">
-            <div class="form-group">
-                <label for="issueDescInput"></label>
-                <input type="text" class="form-control" id="issueDescInput" placeholder="Enter name">
-                <p></p>
-            </div>
-            <!-- <div class="form-group">
-                 <label for="issueSeverityInput">Severity</label>
-                 <select id="issueSeverityInput" class="form-control">
-                     <option value="Low">Low</option>
-                     <option value="Medium">Medium</option>
-                     <option value="High">High</option>
-                 </select>
-             </div>-->
-            <!--<div class="form-group">
-                <label for="issueAssignedToInput">Room code</label>
-                <input type="text" class="form-control" id="issueAssignedToInput" placeholder="Enter room code">
-            </div>-->
-            <!-- -->
+        <h3>Add New Player:</h3>
+        <form id="issueInputForm" method="POST" action="questions">
+            <input type="text" class="form-control" id="name" name="name" placeholder="Enter name">
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>
     </div>
+
     <div class="col-lg-12">
         <div id="issuesList">
         </div>

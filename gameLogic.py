@@ -1,4 +1,5 @@
 import threading
+import json
 import random
 
 class iceBreaker():
@@ -39,4 +40,5 @@ class iceBreaker():
 
     #process http message? Probably not.
     def processMessage(self, message):
-        return ""        
+        data = json.loads(message)
+        return ""      
