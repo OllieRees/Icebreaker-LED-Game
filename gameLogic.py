@@ -7,22 +7,28 @@ class iceBreaker():
     def __init__(self):
         self.users = list() #just a list of users
         self.questions = dict() #key is the user name, and the value is a dict of question:answer. 
+        self.activeUser = ""
 
     def resetGame(self):
         self.users = list()
         self.questions = dict()
+        self.activeUser = ""
 
     def addUser(self, name, questions):
         self.users.append(name) 
         self.questions.update({name : questions}) #add user to questions
 
-    #set a user active to call requestQuestion for the user
+    #Assign a activeUser 
     def setActive(self, name):
-        return questions.get(name) 
+        self.activeUser = name 
 
-    #Request a question to send
+    #Request a question to send. Picks from the questions dict excluding the key-val pair with the activeuser as key 
     def requestQuestion(self):
-        self.question = random.choice(self.questions)
+        possibleQuestions = [for key, value in self.questions.getitems() if key not activeUser] #reduces questions to possible questions
+        randomUser = random.choice(possibleQuestions.keys()) #gets a random user
+        askedQuestion = random.choice(list(randomUser)) #gets a random question/key from randomUser
+        return askedQuestion
+        
         #send question to be sent as HTML label
 
     #check if the answer given is the same as the answer in the question-answer hashmap
