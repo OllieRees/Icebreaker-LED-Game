@@ -7,3 +7,6 @@ class iceBreaker():
 
     def processMessage(self, message):
         return f'> {message}'
+
+    def play(self):
+        pass

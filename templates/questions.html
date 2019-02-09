@@ -16,38 +16,12 @@
 
 <form id = "quiz" name = "quiz">
 
-
-    <p class = "questions">What is your favorite hobby?</p>
-    <input id = "textbox1" type = "text" name = "question1">
-
-    <p class = "questions">What would be your dream job?</p>
-    <input id = "textbox2" type = "text" name = "question2">
-
-    <p class = "questions">What is the name of a country that you would like to go to for a vacation?</p>
-    <input id = "textbox3" type = "text" name = "question3">
-
-    <p class = "questions">What is your favorite sport or physical activity?</p>
-    <input id = "textbox4" type = "text" name = "question4">
-
-    <p class = "questions">What is your favorite movie?</p>
-    <input id = "textbox5" type = "text" name = "question5">
-
-    <p class = "questions">Who is someone you really admire?</p>
-    <input id = "textbox6" type = "text" name = "question6">
-
-    <p class = "questions">What is your favourite food?</p>
-    <input id = "textbox7" type = "text" name = "question7">
-
-    <p class = "questions">Are you a pizzazz pizza or domino's pizza kind of guy?</p>
-    <input id = "textbox8" type = "text" name = "question8">
-
-    <p class = "questions">What is your favourite app?</p>
-    <input id = "textbox9" type = "text" name = "question9">
-
-    <p class = "questions">What is your go-to meal after a night out?</p>
-    <input id = "textbox10" type = "text" name = "question10"><br><br>
-
-
+        {% for num, q in questions %}
+            <p class = questions>{{ q }}</p>
+            <input id = "textbox" type = "text" name="Question{{ num }}">
+        {% endfor %}
+    
+    <br><br>
 
     <input id = "button" type = "button" value = "I'm finished!" onclick = "check();">
 
