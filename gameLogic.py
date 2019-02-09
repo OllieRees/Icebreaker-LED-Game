@@ -11,8 +11,9 @@ class iceBreaker():
         self.users = list()
         self.questions = dict()
 
-    def addUser(self, name):
+    def addUser(self, name, questions):
         self.users.append(name)
+        self.questions.update({name : questions}) #add user to questions
 
     def setActive(self, name):
         pass
