@@ -1,4 +1,5 @@
 import threading
+import json
 
 class iceBreaker():
 
@@ -29,4 +30,5 @@ class iceBreaker():
         pass
 
     def processMessage(self, message):
-        return ""        
+        data = json.loads(message)
+        return ""      
