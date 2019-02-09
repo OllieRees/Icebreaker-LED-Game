@@ -5,9 +5,13 @@ getAnswer = function(TextFieldID) {
     return document.getElementById(TextFieldID).value;
 };
 
+getCookie = function() {
+    return document.cookie;
+};
+
 /** Get username of answerer */
 getAnswererName = function() {
-  let decodedCookie = decodeURIComponent(document.cookie);
+  let decodedCookie = decodeURIComponent(getCookie()); //might change the getCookie method
   let cookieFields = decodedCookie.split(";");
   let username = ""; //default username
   for (let fields in cookieFields) {
