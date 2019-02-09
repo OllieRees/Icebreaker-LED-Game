@@ -1,0 +1,24 @@
+html {
+    height: 100%
+}
+
+body {
+    background-image: url("CSS backround image greyscale.jpg");
+    background-repeat:no-repeat;
+    background-size:cover;
+    font-family: Arial, sans-serif;
+    background-position: center;
+    display: flex;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    background-color: #e1e1e199;
+    border-radius: 5px;
+    padding: 24px;
+}
