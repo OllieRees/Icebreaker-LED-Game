@@ -22,14 +22,10 @@ def questions():
 
     with open("static/questions.txt") as file:
         questionList = [line.rstrip() for line in file]
-    
-    print(questionList)
 
     filteredQuestionList = []
     for i in random.sample(range(len(questionList)), 6):
         filteredQuestionList.append(questionList[i])
-
-    print(filteredQuestionList)
 
     resp = make_response(render_template(
         "questions.html", 

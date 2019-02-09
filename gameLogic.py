@@ -3,15 +3,21 @@ import threading
 class iceBreaker():
 
     def __init__(self):
-        self.users = []
-        self.questions = {}
+        self.users = list()
+        self.questions = dict()
 
     def resetGame(self):
-        self.users = []
-        self.questions = {}
+        self.users = list()
+        self.questions = dict()
 
     def addUser(self, name):
-        self.users += name
+        self.users.append(name)
+
+    def setActive(self, name):
+        pass
+
+    def requestQuestion(self):
+        pass
 
     def checkAnswer(self, question, answer):
         pass
@@ -23,4 +29,4 @@ class iceBreaker():
         pass
 
     def processMessage(self, message):
-        return ""
+        return ""        
