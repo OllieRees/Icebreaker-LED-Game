@@ -5,10 +5,12 @@ getUsername = function(TextFieldID) {
     return document.getElementById(TextFieldID).value;
 };
 
-//Sends a username to the dragon server over port 6363.
-sendUsername = function(username, dragonServerAddress) {
+//Sends a username to the dragon server over port 6363. Attached to a submit button on the login page.
+sendUsername = function(TextFieldID, dragonServerAddress) {
+    let username = getUsername(TextFieldID);
     let conn = new WebSocket(dragonServerAddress + ":6363");
     conn.onopen = function() {
         conn.send("Username : " + username);
     };
 };
+
