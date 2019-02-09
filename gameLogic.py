@@ -12,9 +12,10 @@ class iceBreaker():
         self.questions = dict()
 
     def addUser(self, name, questions):
-        self.users.append(name)
+        self.users.append(name) 
         self.questions.update({name : questions}) #add user to questions
 
+    #set a user active to call requestQuestion for the user
     def setActive(self, name):
         pass
 
@@ -31,9 +32,11 @@ class iceBreaker():
         else:
             return False
 
+    #set questions at the beginning
     def setQuestions(self, questionList):
         self.questions = questionList
 
+    #would be the game thread - but may use states to run the game
     def play(self):
         pass
 
