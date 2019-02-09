@@ -27,7 +27,7 @@ getAnswererName = function() {
 sendAnswer = function(TextFieldID, dragonServerAddress) {
     let answer = getAnswer(TextFieldID);
     let username = getAnswererName();
-    let conn = new WebSocket(dragonServerAddress + ":63636");
+    let conn = new WebSocket("ws://" + dragonServerAddress + ":63636/");
     conn.onopen = function() {
         conn.send("Username : " + username + ", Answer : " + answer);
     };
