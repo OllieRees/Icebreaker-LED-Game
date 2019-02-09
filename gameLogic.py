@@ -17,7 +17,7 @@ class iceBreaker():
 
     #set a user active to call requestQuestion for the user
     def setActive(self, name):
-        pass
+        return questions.get(name) 
 
     #Request a question to send
     def requestQuestion(self):
@@ -27,10 +27,7 @@ class iceBreaker():
     #check if the answer given is the same as the answer in the question-answer hashmap
     def checkAnswer(self, question, answer):
         questionAnswer = self.questions.get(activeUser) #gets the question and answer dict for the activeUser
-        if (answer == questionAnswer.get(question)): #check if the answer provided is the same as the one in the questions dict
-            return True
-        else:
-            return False
+        return (answer == questionAnswer.get(question)): #check if the answer provided is the same as the one in the questions dict
 
     #set questions at the beginning
     def setQuestions(self, questionList):
@@ -40,5 +37,6 @@ class iceBreaker():
     def play(self):
         pass
 
+    #process http message? Probably not.
     def processMessage(self, message):
         return ""        
