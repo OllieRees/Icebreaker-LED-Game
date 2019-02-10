@@ -16,7 +16,7 @@ def index():
 @app.route('/questions', methods = ['POST', 'GET'])
 def questions():
     name = "default"
-    if request.method == 'POST':
+    if request.method == 'POST': 
         name = request.form['name']
     questionList = []
 
@@ -37,7 +37,7 @@ def questions():
 
 @app.route('/game', methods = ['POST', 'GET'])
 def game():
-    ib.play()
+    return render_template("personal.html")
 
 if __name__ == '__main__':
     ws.start()

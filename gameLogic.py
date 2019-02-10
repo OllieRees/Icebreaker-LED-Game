@@ -24,17 +24,18 @@ class iceBreaker():
 
     #Request a question to send. Picks from the questions dict excluding the key-val pair with the activeuser as key 
     def requestQuestion(self):
-        possibleQuestions = [for key, value in self.questions.getitems() if key not activeUser] #reduces questions to possible questions
-        randomUser = random.choice(possibleQuestions.keys()) #gets a random user
-        askedQuestion = random.choice(list(randomUser)) #gets a random question/key from randomUser
-        return askedQuestion
+        possibleQuestions = dict(self.questions)
+        possibleQuestions.pop(self.activeUser) #reduces questions to possible questions
+        randomUser = random.choice(list(possibleQuestions.keys())) #gets a random user
+        askedQuestion = random.choice(list(possibleQuestions.get(randomUser).keys())) #gets a random question/key from randomUser
+        return randomUser + " : " + askedQuestion
         
         #send question to be sent as HTML label
 
     #check if the answer given is the same as the answer in the question-answer hashmap
     def checkAnswer(self, question, answer):
-        questionAnswer = self.questions.get(activeUser) #gets the question and answer dict for the activeUser
-        return (answer == questionAnswer.get(question)): #check if the answer provided is the same as the one in the questions dict
+        questionAnswer = self.questions.get(self.activeUser) #gets the question and answer dict for the activeUser
+        return answer == questionAnswer.get(question) #check if the answer provided is the same as the one in the questions dict
 
     #set questions at the beginning
     def setQuestions(self, questionList):
@@ -47,4 +48,32 @@ class iceBreaker():
     #process http message? Probably not.
     def processMessage(self, message):
         data = json.loads(message)
-        return ""      
+        return ""   
+
+if __name__ == "__main__":
+    ib = iceBreaker()
+
+    dicts = [
+        {"a":"A", "b":"B"},
+        {"c":"C", "d":"D"},
+        {"e":"E", "f":"F"},
+        {"g":"G", "h":"H"},
+        {"i":"I", "j":"J"}
+    ]
+    users = [
+        'test1',
+        'test2',
+        'test3',
+        'test4',
+        'test5',
+    ]
+
+    for i in range(5):
+        ib.addUser(users[i], dicts[i])
+    
+    i = 0
+    while True:
+        i = i+1 if i <= 3 else 0
+        ib.setActive(users[i])
+        print(users[i], ':', ib.requestQuestion())
+        input()
