@@ -1,6 +1,6 @@
 ![alt text](https://github.com/OllieRees/Icebreaker-LED-Game/blob/master/templates/Ice.png)
 
-## A Web app - game for Hack the South 2019
+## A Web app - game for [Hack the South 2019](https://hackthesouth.co.uk/)
 
 ## Developed by:
 - [Jacob Brown](https://github.com/Gamerick1029)
