@@ -1,4 +1,5 @@
-# Ice Breaker
+![alt text](https://github.com/OllieRees/Icebreaker-LED-Game/blob/master/templates/Ice.png)
+
 ## Web app game for Hack the South 2019
 
 ### A web app which is a conversation starter, icebreaker and a game all in one! Nothing more than a web browser needed!
