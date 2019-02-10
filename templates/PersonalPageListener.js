@@ -1,8 +1,8 @@
 /** Attached to the personal page. Includes a method that receives data from the server and sends messages to the server.
  * The two methods are independent of each other. */
 
-PersonalPageListener = function(dragonServerAddress) {
-    conn = new WebSocket(dragonServerAddress + ":63636");
+PersonalPageListener = function() {
+    conn = new WebSocket("ws://" + window.location.hostname + ":63636");
 
     /** Send action, question and answer data when user submits answer*/
     button.onClick = function(event) {
