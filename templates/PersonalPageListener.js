@@ -12,9 +12,11 @@ PersonalPageListener = function(dragonServerAddress) {
         for (data in e.data.split(",")) {
             if (data.contains("current score")) {
                 document.getElementById(textbox4).value = data.split(":")[1];
+                continue;
             }
             if(data.contains("question")) {
                 document.getElementById(textbox1).value = data.split(":")[1];
+                continue;
             }
             if(data .contains("answerer")) {
                 document.getElementById(textbox2).value = data.split(":")[1];
