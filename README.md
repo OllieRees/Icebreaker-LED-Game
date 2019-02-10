@@ -2,6 +2,13 @@
 
 ## A Web app - game for Hack the South 2019
 
+## Created by:
+- [Jacob Brown](https://github.com/Gamerick1029)
+- [Ollie Rees](https://github.com/OllieRees)
+- [Paulina Kulyte](https://github.com/Pkulyte)
+- [Kareem Alaa](https://github.com/KareemAlaa2001)
+
+
 ### A web app which is a conversation starter, icebreaker and a game all in one! Nothing more than a web browser needed!
 
 ### Inspiration
