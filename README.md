@@ -1,4 +1,4 @@
-![alt text](https://github.com/OllieRees/Icebreaker-LED-Game/blob/master/templates/Ice.png)
+![alt text](https://github.com/OllieRees/Icebreaker-LED-Game/blob/master/static/Ice.png)
 
 ## A Web app - game for [Hack the South 2019](https://hackthesouth.co.uk/)
 
