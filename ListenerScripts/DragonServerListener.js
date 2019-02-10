@@ -1,4 +1,4 @@
-/** Whenever the DragonServer sends a message to the webapp, print out the message */
+/** Whenever the DragonServer sends a message to the webapp, return the data from the message. */
 pollServer = function(dragonServerAddress) {
     let conn = new WebSocket(dragonServerAddress + ":6363");
 
@@ -8,11 +8,4 @@ pollServer = function(dragonServerAddress) {
         conn.close();
         return data;
     }
-};
-
-/** Receives the value from the DragonServer's message */
-receiveValue = function(dragonServerAddress) {
-    var data = JSON.parse(pollServer(dragonServerAddress)); //might not need to parse it
-    let value = data.split(":")[1]; //takes the value of the data
-    return(value);
 };

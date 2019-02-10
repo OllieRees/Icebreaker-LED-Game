@@ -1,5 +1,5 @@
 /** Sends the answer for each question to the DragonServer */
-
+/** Deprecated */
 /** Gets the answer from the textfield */
 getAnswer = function(TextFieldID) {
     return document.getElementById(TextFieldID).value;
@@ -30,6 +30,6 @@ sendAnswer = function(TextFieldID, dragonServerAddress) {
     let username = getAnswererName();
     let conn = new WebSocket("ws://" + dragonServerAddress + ":63636/");
     conn.onopen = function() {
-        conn.send("Username : " + username + ", Answer : " + answer);
+        conn.send("username:" + username + ", answer:" + answer);
     };
 };
