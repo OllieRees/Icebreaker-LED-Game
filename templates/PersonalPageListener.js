@@ -6,7 +6,9 @@ PersonalPageListener = function(dragonServerAddress) {
 
     /** Send action, question and answer data when user submits answer*/
     button.onClick = function(event) {
-        conn.send("action:answer,question:" + document.getElementById(textbox1).value + ",answer:" + document.getElementById(textbox3).value);
+        let name = document.cookie.split("=")[1];
+        conn.send("action:answer,question:" + document.getElementById(textbox1).value + ",answer:" + document.getElementById(textbox3).value
+            + ",user:" + name);
     };
     conn.onmessage = function(e) {
         for (data in e.data.split(",")) {
@@ -24,4 +26,5 @@ PersonalPageListener = function(dragonServerAddress) {
         }
     };
 };
+
 
