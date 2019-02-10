@@ -6,16 +6,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Ice Breaker</title>
-    <link rel="stylesheet" href="stylesht.css" crossorigin="anonymous">
-    <link rel="stylesheet" href="bootstrap.min.css" crossorigin="anonymous">
-    <link rel="stylesheet" href="design.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='stylesht.css') }}" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='bootstrap.min.css') }}" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='design.css') }}" crossorigin="anonymous">
 
 </head>
 <body>
 <div class="container3">
-
-<!--<h4>Time left:</h4>-->
-    <!--<input id = "textbox5" type = "text" name = "answer5" readonly>-->
 
     <h4>Time left</h4>
     <div id="clockdiv">
