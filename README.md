@@ -13,7 +13,7 @@
 
 ### Inspiration
 - We wanted to build something that incorporated networking and scripting
-- We were inspired by AmEx's proposition to make an something to break the ice.
+- We were inspired by AmEx's proposition to make something that breaks the ice.
 
 ### What it does
 A Web app that anyone with a web browser can participate in. You answer a few randomly chosen questions before starting, 
