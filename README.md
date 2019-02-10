@@ -2,6 +2,10 @@
 
 ## A Web app - game for [Hack the South 2019](https://hackthesouth.co.uk/)
 
+## Awards won:
+- Best Beginners Project.
+- Best IoT Hack Using a Qualcomm Device 410C Dragonboard.
+
 ## Developed by:
 - [Jacob Brown](https://github.com/Gamerick1029)
 - [Ollie Rees](https://github.com/OllieRees)
