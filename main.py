@@ -5,9 +5,8 @@ from websocketComms import websocketComms
 from gameLogic import iceBreaker
 
 app = Flask(__name__)
-ws = websocketComms()
-USERS = set()
 ib = iceBreaker()
+ws = websocketComms(ib)
 
 @app.route('/')
 def index():
@@ -35,8 +34,12 @@ def questions():
     resp.set_cookie('name', name)
     return resp
 
-@app.route('/game', methods = ['POST', 'GET'])
+@app.route('/personal', methods = ['POST', 'GET'])
 def game():
+    if request.method == 'POST':
+        questions = request.form.to_dict()
+        user = request.cookies.get('name')
+        ib.addUser(user, questions)
     return render_template("personal.html")
 
 if __name__ == '__main__':

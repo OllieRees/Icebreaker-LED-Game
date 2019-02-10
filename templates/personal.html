@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Ice Breaker</title>
     <link rel="stylesheet" href="stylesht.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="bootstrap.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="design.css" crossorigin="anonymous">
 
 </head>
 <body>
@@ -40,8 +42,8 @@
     <h4>Answer:</h4>
     <input id = "textbox3" type = "text" name = "answer3"> </p>
 
-    <input id = "button" type = "button" value = "Submit" onclick = "check();">
-    <script type="text/javascript" src="./PersonalPageListener.js">PersonalPageListener()</script>
+    <input id = "button" type = "button" value = "Submit">
+    <script type="text/javascript" src="{{ url_for('static', filename='PersonalPageListener.js') }}">PersonalPageListener()</script>
 
 </div>
 </body>

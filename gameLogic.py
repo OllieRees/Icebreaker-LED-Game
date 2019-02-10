@@ -28,13 +28,13 @@ class iceBreaker():
         possibleQuestions.pop(self.activeUser) #reduces questions to possible questions
         randomUser = random.choice(list(possibleQuestions.keys())) #gets a random user
         askedQuestion = random.choice(list(possibleQuestions.get(randomUser).keys())) #gets a random question/key from randomUser
-        return randomUser + " : " + askedQuestion
+        return [randomUser,askedQuestion]
         
         #send question to be sent as HTML label
 
     #check if the answer given is the same as the answer in the question-answer hashmap
-    def checkAnswer(self, question, answer):
-        questionAnswer = self.questions.get(self.activeUser) #gets the question and answer dict for the activeUser
+    def checkAnswer(self, question, answer, user):
+        questionAnswer = self.questions.get(user) #gets the question and answer dict for the activeUser
         return answer == questionAnswer.get(question) #check if the answer provided is the same as the one in the questions dict
 
     #set questions at the beginning
@@ -47,8 +47,11 @@ class iceBreaker():
 
     #process http message? Probably not.
     def processMessage(self, message):
-        data = json.loads(message)
-        return ""   
+        data = message.split(',')
+        if data[0].split(':')[1] == 'answer':
+            if self.checkAnswer(data[1].split(':')[1], data[2].split(':')[1], data[3].split(':')[1]):
+                return ["client", "success"]
+        return ["", ""]   
 
 if __name__ == "__main__":
     ib = iceBreaker()
@@ -75,5 +78,8 @@ if __name__ == "__main__":
     while True:
         i = i+1 if i <= 3 else 0
         ib.setActive(users[i])
-        print(users[i], ':', ib.requestQuestion())
-        input()
+        q = ib.requestQuestion()
+        user = q[0]
+        question = q[1]
+        print(user, ':', question)
+        print(ib.checkAnswer(question, input(), user))

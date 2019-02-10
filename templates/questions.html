@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 
     <meta charset="utf-8">
@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Questions for you to answer before entering the game:</title>
     <link rel="stylesheet" href="stylesht.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="bootstrap.min.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="design.css" crossorigin="anonymous">
 
 </head>
 
@@ -14,15 +16,14 @@
 <body>
 
 <div class="container2">
-<form id = "quiz" name = "quiz">
+<form id = "quiz" name = "quiz" method="POST" action="personal">
 
     {% for questionNum in range(numOfQs) %}
         <p class = "questions">{{ questions[questionNum] }}</p>
-        <input id = "textbox{{ questionNum }}" type = "text" name = "question{{ questionNum }}"><br><br>
+        <input id = "textbox{{ questionNum }}" type = "text" name = "{{ questions[questionNum] }}"><br><br>
     {% endfor %}
 
-    <input id = "button" type = "button" value = "I'm finished!" onclick = "check();">
-
+    <button type="submit" class="btn btn-primary">I'm finished!</button>
 
 </form>
 

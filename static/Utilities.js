@@ -1,7 +1,3 @@
-<p id="demo"></p>
-
-    <script>
-
 var deadline = new Date();
 deadline.setSeconds(t.getSeconds() + 120); //adds 120 seconds so countdown is 2 minutes
 
@@ -20,4 +16,3 @@ var x = setInterval(function() {
         document.getElementById("minute").innerHTML ='0' ;
         document.getElementById("second").innerHTML = '0'; }
 }, 1000);
-</script>
