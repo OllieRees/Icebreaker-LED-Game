@@ -2,6 +2,7 @@
  * The two methods are independent of each other. */
 
 showQuestionAnswerer = function(dragonServerAddress, scoreFieldID, questionFieldID, answererFieldID) {
+    conn = new WebSocket(dragonServerAddress)
     let data = JSON.parse(pollServer(dragonServerAddress)); //called every time the server sends a message
     var vals;
     for (vals in data.split(",")) {

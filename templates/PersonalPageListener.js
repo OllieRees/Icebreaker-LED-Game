@@ -1,21 +1,25 @@
 /** Attached to the personal page. Includes a method that receives data from the server and sends messages to the server.
  * The two methods are independent of each other. */
 
-showQuestionAnswerer = function(dragonServerAddress, scoreFieldID, questionFieldID, answererFieldID) {
-    let data = JSON.parse(pollServer(dragonServerAddress)); //called every time the server sends a message
-    var vals;
-    for (vals in data.split(",")) {
-        if (vals.contains("current score")) {document.getElementById(scoreFieldID).value = vals.split(":")}
-        if (vals.contains("question")) {document.getElementById(questionFieldID).value = vals.split(":")}
-        if (vals.contains("answerer")) {document.getElementById(answererFieldID).value = vals.split(":")}
-    }
-};
+PersonalPageListener = function(dragonServerAddress) {
+    conn = new WebSocket(dragonServerAddress + ":63636");
 
-/** Sends the answer to the DragonServer */
-sendAnswer = function(dragonServerAddress, answerFieldID) {
-    let conn = new WebSocket(dragonServerAddress + ":63636");
-    let answer = document.getElementById(answerFieldID).value;
-    conn.onopen = function(){
-        conn.send("answer:" + answer);
+    /** Send action, question and answer data when user submits answer*/
+    button.onClick = function(event) {
+        conn.send("action:answer,question:" + document.getElementById(textbox1).value + ",answer:" + document.getElementById(textbox3).value);
+    };
+    conn.onmessage = function(e) {
+        for (data in e.data.split(",")) {
+            if (data.contains("current score")) {
+                document.getElementById(textbox4).value = data.split(":")[1];
+            }
+            if(data.contains("question")) {
+                document.getElementById(textbox1).value = data.split(":")[1];
+            }
+            if(data .contains("answerer")) {
+                document.getElementById(textbox2).value = data.split(":")[1];
+            }
+        }
     };
 };
+
