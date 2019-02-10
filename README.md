@@ -2,7 +2,7 @@
 
 ## A Web app - game for Hack the South 2019
 
-## Created by:
+## Developed by:
 - [Jacob Brown](https://github.com/Gamerick1029)
 - [Ollie Rees](https://github.com/OllieRees)
 - [Paulina Kulyte](https://github.com/Pkulyte)
